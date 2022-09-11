@@ -6,60 +6,50 @@ if (login == "admin") {
   if (password == "12pass33210") {
     console.log("Успішна авторизація!");
   } else {
-    console.log("Пароль введено невірно.");
+    console.log("Логін або пароль введено невірно.");
   }
 } else {
-  console.log("Логін введено невірно.");
+  console.log("Логін або пароль введено невірно.");
 }
 let amountofmoney = +prompt("Кількість грошей в наявності.");
 let startbudget = amountofmoney;
 console.log(
   "Прейскурант цін: \n Watermelon: 21 грн, Carrot: 8 грн, Potato: 12 грн."
 );
-let UsersChoice = prompt("Оберіть, що ви хочете купити.");
+let usersChoice = prompt("Оберіть, що ви хочете купити.");
 let pricelist = {
   Watermelon: 21,
   Carrot: 8,
   Potato: 12,
 };
-if (amountofmoney < pricelist["Watermelon"]) {
-  if (amountofmoney < pricelist["Carrot"]) {
-    if (amountofmoney < pricelist["Potato"]) {
-      console.log("У вас не хватає грошей нінащо.");
-    }
-  }
+let prices = []
+for (let key in pricelist) {
+  prices.push(pricelist[key]);
 }
+Math.min.apply(null, prices) > amountofmoney ? console.log("Ви не зможете купити нічого.") : console.log("Йде обрахунок.")
 let i = -1;
 while (amountofmoney >= 0) {
-  amountofmoney -= pricelist[UsersChoice];
+  amountofmoney -= pricelist[usersChoice];
   i++;
 }
 if (i > -1) {
   console.log(
     `За ${startbudget} грн. Ви можете придбати ${i} шт. даного продукту. У Вас залишиться ${
-      amountofmoney + pricelist[UsersChoice]
+      amountofmoney + pricelist[usersChoice]
     } грн.`
   );
 } else {
   console.log(
-    `"У вас недостатньо коштів, для купівлі хоча б 1 шт. ${UsersChoice}"`
+    `"У вас недостатньо коштів, для купівлі хоча б 1 шт. ${usersChoice}"`
   );
 }
 const A = +prompt("Введіть значення сторони A");
 const B = +prompt("Введіть значення сторони B");
 const C = +prompt("Введіть значення сторони C");
-if (A + B > C) {
-  if (A + C > B) {
-    if (B + C > A) {
-      console.log("Такий трикутник існує.");
-    } else {
-      console.log("Такого трикутника неіснує.");
-    }
-  } else {
-    console.log("Такого трикутника неіснує.");
-  }
-} else {
-  console.log("Такого трикутника неіснує.");
+if (A + B > C && A + C > B && C + B > A){
+  console.log('Такий трикутник інсує.')
+}else{
+  console.log('Такого трикутника неіснує')
 }
 
 // 2 && 0 && 3 || true && false = False
