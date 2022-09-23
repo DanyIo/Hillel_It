@@ -43,7 +43,7 @@ function newMemberRegister(
   }
 }
 
-let some_user = newMemberRegister(
+carmileage.some_user = newMemberRegister(
   "Dota2",
   "Danylo",
   1969,
