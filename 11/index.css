@@ -1,0 +1,57 @@
+.twin_element {
+  background-color: aqua;
+}
+body {
+  background: #eee;
+  font-family: "times new roman", serif;
+  line-height: 30px;
+}
+mark{
+    background-color: rgb(240, 155, 36);
+    border-radius: 1em 0;
+    padding: .1rem;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 5px solid #000000;
+    padding: 10px;
+    text-align: center;
+    }
+
+.box {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  margin: 30px 5%;
+  padding: 5%;
+}
+
+@media (min-width: 544px) {
+  .box {
+    margin: 40px auto;
+    max-width: 440px;
+    padding: 40px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+ul li::before {
+  content: "✅";
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+
+ul ul li::before {
+  content: "📌";
+} 
+ul ul ul li::before {
+  content: "-";
+}
+#attention::before  {
+    content: "❗";
+    font-size: 15px;
+}
