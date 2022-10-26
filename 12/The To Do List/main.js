@@ -19,7 +19,6 @@ function addNewTask(text) {
   li.append(closeButton);
   closeButton.addEventListener("click", function (event) {
     li.remove();
-    console.log(1);
   });
 }
 button.addEventListener("click", function (event) {
