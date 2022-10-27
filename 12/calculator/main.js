@@ -43,7 +43,9 @@ calculator.addEventListener("click", function (event) {
   } else if (event.target.innerText === "AC") {
     clr();
   } else if (event.target.innerText === "=") {
-    solve();
+    if (document.getElementById("field").value !== "") {
+      solve();
+    }
   } else if (
     event.target.innerText === "+/-" ||
     event.target.innerText === "%"
