@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="ua">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Solid</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <input type="text" id="field" placeholder = "Enter the number of seconds.">
-        <button id="button">Start timeout</button>
-        <script src="main.js" async defer></script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Title</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        id="field"
+        placeholder="Enter the number of seconds."
+      />
+      <button id="button1">Start timeout</button>
+    </div>
+    <div>
+      <input type="date" id="dataField" />
+      <button id="button2">Start Campaign</button>
+      <input type="text" id="timerfield" placeholder="Here would appear timer." />
+    </div>
+    <div class="box">
+      <select name="phone_model" id="phone_model">
+        <option value="iPhone">iPhone</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Pixel">Pixel</option>
+        <option value="OnePlus">OnePlus</option>
+      </select>
+      <select name="RAM" id="RAM">
+        <option value="2GB OP">2GB OP</option>
+        <option value="4GB OP">4GB OP</option>
+        <option value="6GB OP">6GB OP</option>
+        <option value="8GB OP">8GB OP</option>
+      </select>
+      <select name="Built-in_memory" id="Built-in_memory">
+        <option value="64GB">64GB</option>
+        <option value="128GB">128GB</option>
+        <option value="256GB">256GB</option>
+        <option value="512GB">512GB</option>
+      </select>
+      <button id = "priceFinder">Calculate</button>
+      <input type="text" placeholder="Here would appear price." id="pricesPlace">
+    </div>
+    <script src="main.js" async defer></script>
+  </body>
 </html>
