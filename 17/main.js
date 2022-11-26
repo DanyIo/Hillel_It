@@ -1,5 +1,4 @@
 const APIKey = "9SjprIauzm1kV2DrNv7UGEZL92uy576Z";
-const xhr = new XMLHttpRequest();
 const cityInputField = document.getElementById("name");
 const mainDiv = document.getElementById("main");
 const navbar = document.getElementById("getCityNeighbors-container");
@@ -17,12 +16,11 @@ async function getCityID(cityName) {
     );
     if (response.status === 200) {
       const parsedJSON = await response.json();
-      console.log(parsedJSON[0].Key);
       getWeather(parsedJSON[0].Key);
     }
   } catch (error) {
     console.error(error);
-    cityInputField.value = "There is no such city";
+    cityInputField.value = "Something gone wrong.";
     refresh()
 
   }
@@ -45,7 +43,7 @@ async function getWeather(id) {
     }
   } catch (error) {
     console.error(error);
-    cityInputField.value = "There is no such city";
+    cityInputField.value = "Something gone wrong.";
     refresh()
   }
 }
@@ -87,7 +85,6 @@ function displayWeatherInfo(forecastInfo, cityNeighborsInfo) {
   }
   counter++;
   for (let a = 0; a < 5; a++) {
-    console.log(cityNeighborsInfo[a].LocalizedName);
     const button = document.createElement("button");
     button.className = "neighborCityButton";
     button.innerHTML = cityNeighborsInfo[a].LocalizedName;
