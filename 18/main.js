@@ -11,13 +11,10 @@ let page = 0;
 let counterForSearchButton = 0;
 let startPoint = 0;
 async function getMovieInfo(movieTitle, page) {
-  const response = await fetch(
-    `http://www.omdbapi.com/?s=${movieTitle}&apikey=${API_Key}&page=${page}`,
-    {
-      method: "GET",
-    }
+  const response = await axios.get(
+    `http://www.omdbapi.com/?s=${movieTitle}&apikey=${API_Key}&page=${page}`
   );
-  const json = await response.json();
+  const json = response.data;
   if (json.Error) {
     movieTitleInputField.value = json.Error;
     return 0;
@@ -70,13 +67,13 @@ async function displayFilms(movies) {
     moreInfo.className = "moreInfo";
     moreInfo.innerHTML = "View more";
     div.append(moreInfo);
-    const response = await fetch(
+    const response = await axios.get(
       `http://www.omdbapi.com/?i=${imdbID}&apikey=${API_Key}`,
       {
         method: "GET",
       }
     );
-    const addInfo = await response.json();
+    const addInfo = response.data;
     const actors = document.createElement("p");
     actors.innerHTML = `Actors: ${addInfo.Actors}`;
     const imdbVotes = document.createElement("p");
